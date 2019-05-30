@@ -8,9 +8,9 @@
 
 <form method="POST" action="https://request-inspector.glitch.me/">
    <section>
-    <label for="username">Username</label>
-    <input id="username" input type="text" name="email" placeholder="Enter your email address">
-    <br>
+    <label for="email">Email</label>
+    <input id="email" input type="email" name="email" placeholder="Enter your email address">
+
 
     <label for="password">Password</label>
     <input id="password" type="password" name="password">
@@ -19,11 +19,14 @@
     <br>
 
     <section>
-    <textarea name="Bio" placeholder="Bio"></textarea>
+    <label for ="bio">Bio</label>
+        <br>
+    <textarea name="bio" id="bio"></textarea>
+    <br>
     <br>
     </section>
 
-    <br>
+
     <section>
     How did you hear about us?
     <br>
@@ -46,9 +49,9 @@
     <br>
     </section>
     <section>
-    What web browser are you using?
+        <label for="browser_used">What web browser are you using?</label>
     <br>
-    <select name="browser_used">
+    <select id="browser_used" name="browser_used">
     <option value="Chrome">Chrome</option>
     <option value="Internet Explorer">Internet Explorer</option>
     <option value="Fire Fox">Fire Fox</option>
