@@ -1,4 +1,57 @@
 .fancy-header {
     color: purple;
     text-decoration: underline;
+    text-align: center;
+}
+h1,h2{
+    color:deeppink;
+    text-decoration:underline;
+}
+header{
+    text-align:center;
+}
+body {
+    background-color:lightgray;
+    background-image:url("../pictures/bt21.jpg");
+    background-size:100%;
+    font-family: 'Indie Flower', cursive;
+    color:purple;
+}
+ol {list-style:katakana;}
+ul {list-style:circle}
+
+table {
+    border-collapse:collapse;
+    background-color:white;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    width:100px;
+}
+table,th,td {
+    border:1px solid black;
+    font-size:50px;
+}
+#price_table {
+    text-align:center;
+}
+
+
+a:link {
+    color: teal;
+}
+
+a:visited {
+    color: mediumvioletred;
+}
+
+a:hover {
+    color: darkslateblue;
+}
+
+a:active {
+    color: tomato;
+}
+footer {
+    text-align:right;
 }
