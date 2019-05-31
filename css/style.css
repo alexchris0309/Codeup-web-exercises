@@ -11,9 +11,11 @@ header{
     text-align:center;
 }
 body {
-    background-color:lightgray;
-    background-image:url("../pictures/bt21.jpg");
-    background-size:100%;
+    background-color:lightpink;
+    background-image:url("../pictures/tata.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     font-family: 'Indie Flower', cursive;
     color:purple;
 }
@@ -23,14 +25,14 @@ ul {list-style:circle}
 table {
     border-collapse:collapse;
     background-color:white;
-    text-align:center;
+    text-align:left;
     margin-left:auto;
     margin-right:auto;
     width:100px;
 }
 table,th,td {
     border:1px solid black;
-    font-size:50px;
+    font-size:30px;
 }
 #price_table {
     text-align:center;
