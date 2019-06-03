@@ -22,17 +22,16 @@ body {
 ol {list-style:katakana;}
 ul {list-style:circle}
 
-table {
+table ,th,td {
     border-collapse:collapse;
     background-color:white;
     text-align:left;
     margin-left:auto;
     margin-right:auto;
     width:100px;
-}
-table,th,td {
     border:1px solid black;
     font-size:30px;
+    padding:22px;
 }
 #price_table {
     text-align:center;
