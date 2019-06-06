@@ -1,7 +1,7 @@
 .jumbotron {
     background-image: url("../pictures/pizza.png");
 }
-.boxcontainer{
+.welcomepizza {
     text-align:center;
     opacity: 0.5;
     filter: alpha(opacity=50);
