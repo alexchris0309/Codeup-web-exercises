@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: auto;
+    box-sizing:border-box;
 }
 
 body, html {
@@ -78,4 +79,13 @@ fieldset {
 
 .btn-block { width:100%;
     /* This element should use 100% of the width */
+}
+.circle {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 0;
+    padding: 50% 0;
+    border-radius: 50%;
+    background-color:"blue";
 }
