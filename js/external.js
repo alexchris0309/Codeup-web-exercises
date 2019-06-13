@@ -5,8 +5,13 @@ var response= prompt("what is your favorite color?");
 alert("Awesome " + response + " is my favorite color too!");
 
 
-var movieDayAmt= prompt( "How many days have you rented a movie?");
-alert(" The total price for renting will be $" +movieDayAmt*3);
+var bear= prompt( "How many days have you rented brother bear?");
+
+var mermaid= prompt( "How many days have you rented little mermaid");
+
+var hercules = prompt( "How many days have you rented Hercules? ");
+
+alert(" The total price for renting will be $" +(hercules*3 +mermaid*3 + bear*3));
 
 var googleHrs= prompt("How many hours have you worked at Google?");
 

@@ -3,7 +3,7 @@
 
 
 console.log("hello from external js!");
-var bill ="bil";
+var bill ="bill";
 console.log(bill);
 
  // alert
@@ -21,4 +21,4 @@ prompt("what is your quest?");
 
 alert("you must be a codeup student to continue viewing this page.");
 confirm("Are you a codeup student?");
-prompt(what cohort were you in?);
+prompt("what cohort were you in?");
