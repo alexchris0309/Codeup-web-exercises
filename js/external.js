@@ -41,21 +41,23 @@ else
 var  premiumMember = confirm( "Are you a Premium Member?");
 
 if (premiumMember ===true) {
-    var expired=confirm("Is the offered expired?");
+    var expired = confirm("Is the offered expired?");
+    if (expired === true) {
+        alert("Offer is not valid");
+    } else
+    {
+        alert("Offer is valid");
+    }
 }
 else {
     var notPremium = prompt("How many items do you have?");
 
     if (notPremium >= 2) {
-        var expired;
-    } else {
+        var twoItems = prompt("Offer is Valid");
+    } else
+        {
         alert("offer is not valid");
     }
 
-    if (expired === true) {
-        alert("Offer is not valid");
-    } else {
-        alert("offer is valid");
-    }
 }
 
