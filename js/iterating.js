@@ -8,7 +8,7 @@
      */
 
 
-    var names=['Alex', 'Efrain', 'Sarah','Gena']
+    var names=['Alex', 'Efrain', 'Sarah','Gena'];
 
     /**
      * TODO:
@@ -41,7 +41,7 @@
      * Refactor your above code to use a `forEach` loop
      */
 names.forEach(function(name){
-    console.log('Here is the name  ' + names)
+    console.log('Here is the name  ' + name)
 });
     /**
      * TODO:
@@ -56,15 +56,16 @@ names.forEach(function(name){
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
+var numbers = [1,2,3,4,5];
 
-    names.forEach(function(name){
-        console.log('Here is the name  ' + names[1])
+    numbers.forEach(function(num){
+        console.log('Here is the number  ' + numbers[1])
     });
-    names.forEach(function(name){
-        console.log('Here is the name  ' + names[2])
+    numbers.forEach(function(num){
+        console.log('Here is the number  ' + numbers[2])
     });
-    names.forEach(function(name){
-        console.log('Here is the name  ' + names[5])
+    numbers.forEach(function(num){
+        console.log('Here is the number  ' + numbers[4])
     });
 
 })();
