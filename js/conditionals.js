@@ -45,7 +45,7 @@ if (enterNumber=== true) {
 // { alert((whatNumber %2===0)? "that number is even": "that number is odd");
 //
 //     alert(whatNumber + 100);
-//  alert ((whatNumber <0)? "that number is negative": "that number is Even");
+//  alert ((whatNumber <0)? "that number is negative": "that number is positive");
 
 
 //
@@ -223,6 +223,7 @@ console.log (calculateTotal(luckyNumber,200))
 //                 break;
 //     case 1:
 //         return  initialTotal * .9;
+break;
 //     case 2:
 //         return inititalTotal * .75;
 //
