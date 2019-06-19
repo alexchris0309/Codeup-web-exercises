@@ -15,7 +15,7 @@
      * Create a log statement that will log the number of elements in the names
      * array.
      */
-    console.log(names.length);
+    console.log("The length of the names array is "names.length);
 
     /**
      * TODO:
@@ -40,8 +40,8 @@
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
-names.forEach(function(name){
-    console.log('Here is the name  ' + name)
+names.forEach(function(name, i){
+    console.log('the name at index '+ i + " is "+ name)
 });
     /**
      * TODO:
@@ -56,16 +56,19 @@ names.forEach(function(name){
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
-var numbers = [1,2,3,4,5];
 
-    numbers.forEach(function(num){
-        console.log('Here is the number  ' + numbers[1])
-    });
-    numbers.forEach(function(num){
-        console.log('Here is the number  ' + numbers[2])
-    });
-    numbers.forEach(function(num){
-        console.log('Here is the number  ' + numbers[4])
-    });
+    function first(array){
+        return array [0];
+    }
+    function second(array){
+        return array [1];
+    }
+    function last(array){
+        return array [array.length - 1];
+    }
+
+    console.log(first(names));
+    console.log(second(names));
+    console.log(last(names));
 
 })();
