@@ -42,16 +42,16 @@
 // //         console.log(row);
 // //     }
 // // }
-//
-// var christmasTree= function(){
-//     for (var outer = 1; outside <= 9; outside ++){
-//     var output="";
-//     for (var inner=1;inner<=outer;inner ++){
-//         output += outer;
-//         }
-//     console.log(output)
-//     }
-// }
+
+var christmasTree= function(){
+    for (var outer = 1; outer <= 9; outer ++){
+    var output="";
+    for (var inner=1;inner<=outer;inner ++){
+        output += outer;
+        }
+    console.log(output)
+    }
+}
 // //
 // // var christmasTree = function(){
 // //     for (var outer = 1; outer <=9;outer ++){

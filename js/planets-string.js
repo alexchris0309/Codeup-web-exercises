@@ -14,8 +14,8 @@
     var planetsArray = planetsString.split('|')
     console.log(planetsArray);
 
-    var planetsArray = planetsArray.join('<br>')
-    console.log(planetsArray);
+    var planetsBr = planetsArray.join('<br>')
+    console.log(planetsBr);
     /**
      * TODO:
      * Create a string with <br> tags between each planet. console.log() your
@@ -29,10 +29,13 @@
 
 
 
+var planetsUL = "<ul><li>" + planetsArray.join("</li><li>") + "</li><ul>";
 
-
-
-
-
+//
+//  var planetsArray= planetsArray.unshift("<ul>")
+// //  //
+//        console.log(planetsArray);
+//
+//  var planetsArray= planetsArray.push("<ul>")
 
 })();
