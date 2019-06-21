@@ -12,10 +12,10 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
-    var person= {
+    var person = {
         firstName: "Alex",
         lastName: "Contreras",
-        greeting: function sayHello(){
+        greeting: function sayHello() {
             console.log("Hello from Alex Contreras");
 
         }
@@ -28,8 +28,8 @@
     console.log(person.firstName)
 
 
-
-
+    // person.sayHello= function(){
+    //     console.log("hell from Alex Contreras");}
 
     /**
      * TODO:
@@ -55,17 +55,15 @@
      * and console.log the relevant messages for each person
      */
 
-    function needtoPay(amount){
+    function needtoPay(amount) {
         if (Number(amount < 200)) {
-          return "You do not get a discount. Your total is " + (amount).toFixed(2)
-        }
-        else {
-            return "Your total amount after discount is $"  + ( amount * .88).toFixed(2) +
+            return "You do not get a discount. Your total is " + (amount).toFixed(2)
+        } else {
+            return "Your total amount after discount is $" + (amount * .88).toFixed(2) +
                 " Your total amount before discount was $" + amount + " You Saved $ " + (amount * .12).toFixed(2)
         }
 
     }
-
 
 
     var shoppers = [
@@ -84,11 +82,10 @@
     ];
 
 
-    shoppers.forEach(function(shop,i){
+    shoppers.forEach(function (shop, i) {
         console.log(shoppers[i].name);
         console.log(shoppers[i].amount);
     });
-
 
 
     /** TODO:
@@ -106,10 +103,10 @@
 
     var books = [
         {
-        title: "Euphoria",
-        author: {
-            firstName: "Jeon",
-            lastName: "Jungkook"
+            title: "Euphoria",
+            author: {
+                firstName: "Jeon",
+                lastName: "Jungkook"
 
             }
         },
@@ -126,7 +123,7 @@
 
         {
             title: "Red",
-            author:{
+            author: {
                 firstName: "Jackson",
                 lastName: "Wang"
             }
@@ -134,22 +131,22 @@
         },
 
         {
-           title: "Give me a Chance",
-           author:{
-               firstName: "Lay",
-               lastName: "Yixing"
-           }
+            title: "Give me a Chance",
+            author: {
+                firstName: "Lay",
+                lastName: "Yixing"
+            }
         },
 
         {
             title: "7th  Sense",
-            author:{
+            author: {
                 firstName: "NCT",
                 lastName: "U"
             }
 
         }
-        ];
+    ];
 
 
     console.log(books[0].author.firstName)
@@ -181,15 +178,12 @@
      */
 
 
-    books.forEach(function(book,i){
-        console.log("Book # " + i )
-        console.log("Book Title: " +books[i].title)
+    books.forEach(function (book, i) {
+        console.log("Book # " + (i + 1))
+        console.log("Book Title: " + books[i].title)
         console.log("Author: " + books[i].author.firstName + " " + books[i].author.lastName)
 
     });
-
-
-
 
 
     /**
@@ -202,5 +196,20 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+// //     function createBook(t, firstName, lastName){
+//     var ={};
+//     book.title = title;
+//     book.author = {};
+//     book.author.firstName = firstName;
+//     book.author.lastName = lastName;
+//     return book;
+// }
+//
+// books.push(createBook("how to draw Manga", firtname "Katy, lastName "coope"));"
+
+
+
+
 
 })();
