@@ -47,3 +47,4 @@
     console.log("Circle information rounded to the nearest whole number");
     console.log(circle.logInfo(true));
 })();
+
