@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox Map</title>
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+
+<button id ="zoom10">Zoom 10</button>
+<button id ="zoom15">Zoom 15</button>
+<button id ="zoom20">Zoom 20</button>
+
+
+<button id ="default">Default</button>
+
+
+
+
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<!-- Mapbox JS -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src ="js/keys.js"></script>
+<script src="mapbox-geocoder-utils.js"></script>
+<script src ="js/practiceutils.js"></script>
+
+
+<!-- Custom JS -->
+<script>
+    mapboxgl.accessToken = mapboxToken;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 11,
+        center: [-98.4951, 29.4246]
+    });
+
+    //
+
+    // var titomarker = new mapboxgl.Marker()
+    //     .setLngLat([-98.491024, 29.414181])
+    //     .addTo(map);
+    //
+    // var titopopup = new mapboxgl.Popup()
+    //     // .setLngLat([-98.491024, 29.414181])
+    //     .setHTML("<p>Titos Mexican Cafe</p>")
+    //     .addTo(map);
+    //
+    //     titomarker.setPopup(titopopup)
+    //
+    //
+    //
+    //
+    // var kimuramarker = new mapboxgl.Marker()
+    //     .setLngLat([-98.491544, 29.428541])
+    //     .addTo(map);
+    //
+    // var kimurapopup = new mapboxgl.Popup()
+    // // .setLngLat([-98.491024, 29.414181])
+    //     .setHTML("<p>Kimura</p>")
+    //     .addTo(map);
+    //
+    // kimuramarker.setPopup(kimurapopup)
+    //
+    //
+    //
+    // var picmarker = new mapboxgl.Marker()
+    //     .setLngLat([-98.507886, 29.518939])
+    //     .addTo(map);
+    //
+    // var picpopup = new mapboxgl.Popup()
+    // // .setLngLat([-98.491024, 29.414181])
+    //     .setHTML("<p>Picnikins Patio Cafe</p>")
+    //     .addTo(map);
+    //
+    // picmarker.setPopup(picpopup)
+
+    //
+    var info = [
+    {   name:"Titos Mexican Cafe",
+        description: "<br>Tex Mex Cuisine",
+        long:-98.491024,
+        lat:29.414181
+
+    },
+    {   name: "Kimura",
+        description: "<br>Sushi,Ramen",
+        long:-98.491544,
+        lat:29.428541
+
+    },
+    {
+        name: "Picknikins Patio Cafe",
+        description: "<br>Sandwiches, Soups, Salads",
+        long:-98.507886,
+        lat:29.518939
+    }
+
+    ];
+
+
+    info.forEach(function(i){
+        var marker = new mapboxgl.Marker()
+            .setLngLat([i.long, i.lat])
+            .addTo(map);
+
+        var popup= new mapboxgl.Popup()
+        .setLngLat([i.long , i.lat])
+            .setHTML(i.name + i.description )
+            .addTo(map);
+        marker.setPopup(popup);
+            marker.togglePopup(popup)
+
+
+
+    });
+
+    //
+    document.getElementById("zoom10").addEventListener("click", function() {
+        map.setZoom(10);
+    });
+    document.getElementById("zoom15").addEventListener("click", function() {
+        map.setZoom(15);
+    });
+    document.getElementById("zoom20").addEventListener("click", function() {
+        map.setZoom(20);
+    });
+    document.getElementById("default").addEventListener("click", function() {
+        map.setZoom(11);
+    });
+
+</script>
+
+</body>
