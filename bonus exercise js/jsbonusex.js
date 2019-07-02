@@ -12,4 +12,4 @@ function allIndexesOf(array,element)
 
 }
 
-allIndexesOf(fruits,"pineapple")
+allIndexesOf(fruits,"pineapple");

@@ -16,11 +16,11 @@
 </head>
 <body>
 
+<h1>My Map Box Map</h1>
+
 <button id ="zoom10">Zoom 10</button>
 <button id ="zoom15">Zoom 15</button>
 <button id ="zoom20">Zoom 20</button>
-
-
 <button id ="default">Default</button>
 
 
@@ -32,13 +32,13 @@
 <!-- Mapbox JS -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 <script src ="js/keys.js"></script>
-<script src="mapbox-geocoder-utils.js"></script>
 <script src ="js/practiceutils.js"></script>
 
 
 <!-- Custom JS -->
 <script>
     mapboxgl.accessToken = mapboxToken;
+
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
@@ -46,6 +46,20 @@
         center: [-98.4951, 29.4246]
     });
 
+
+    // // geocode('Original Blanco Cafe', mapboxToken).then(function(blancoCafe){
+    // //     var marker1 = new mapboxgl.Marker(
+    // //         {color:"orange"})
+    // //         .setLngat(blancoCafe)
+    // //         .addToMap(ourMap);
+    //             .setPopup(popup1)
+    // // }) NOTES WITH GEOCODE
+
+    // geocode("6901 Blanco Rd, San Antonio, TX 78216", mapboxToken).then(function(result) {
+    //     console.log(result);
+    //     map.setCenter(result);
+    //     map.setZoom(18);
+    // });
     //
 
     // var titomarker = new mapboxgl.Marker()
@@ -126,6 +140,9 @@
 
     });
 
+
+
+    
     //
     document.getElementById("zoom10").addEventListener("click", function() {
         map.setZoom(10);
