@@ -12,6 +12,14 @@ $(document).keyup(function(element){
     }
 });
 
+console.log(code)
+
+
+
+
+
+
+
 $(document).keyup(function(element){
 
     if(element.which===65) {
