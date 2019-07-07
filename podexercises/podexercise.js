@@ -92,14 +92,28 @@ console.log(adminList(admins));
 // "ABBA" -> 2 # 'A' and 'B' each occur twice
 
 // https://www.codewars.com/kata/counting-duplicates/javascript
+//
+https://medium.com/@caymanbruce/finding-duplicate-characters-in-a-string-in-javascript-94e2cb23ab5e
 
-// https://medium.com/@caymanbruce/finding-duplicate-characters-in-a-string-in-javascript-94e2cb23ab5e
 
 
 
-var countDupe= function(string){
-    return "the number of duplicates in "+ string + " is " + string.toLowerCase().split('').sort().join('').match(/(.)\1+/g).length;
+//
+console.log(duplicateCount('abbbbccccccccde'));
+
+
+
+//
+function duplicateCount(str) {
+    var result = [];
+    var strArr = str.toLowerCase().split("").sort().join("").match(/(.)\1+/g);
+
+    if (strArr != null) {
+        //str == ["iiiiii", "ss"]
+        strArr.forEach(function (elem) {
+            // The reason you are getting the 0 index is because you don't want all the letters in the array not 'iiiiiiii' just 'i'
+            result.push(elem);
+        });
+    }
+    return result.length;
 }
-
-
-console.log(countDupe('aabbccdde'));
