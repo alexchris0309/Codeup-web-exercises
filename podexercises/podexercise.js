@@ -93,14 +93,7 @@ console.log(adminList(admins));
 
 // https://www.codewars.com/kata/counting-duplicates/javascript
 //
-https://medium.com/@caymanbruce/finding-duplicate-characters-in-a-string-in-javascript-94e2cb23ab5e
-
-
-
-
-//
-console.log(duplicateCount('abbbbccccccccde'));
-
+// https://medium.com/@caymanbruce/finding-duplicate-characters-in-a-string-in-javascript-94e2cb23ab5e
 
 
 //
@@ -109,7 +102,7 @@ function duplicateCount(str) {
     var strArr = str.toLowerCase().split("").sort().join("").match(/(.)\1+/g);
 
     if (strArr != null) {
-        //str == ["iiiiii", "ss"]
+        //str == ["iiiiii", "ss"] if i use elem[0]
         strArr.forEach(function (elem) {
             // The reason you are getting the 0 index is because you don't want all the letters in the array not 'iiiiiiii' just 'i'
             result.push(elem);
@@ -117,3 +110,6 @@ function duplicateCount(str) {
     }
     return result.length;
 }
+
+
+console.log(duplicateCount('abbbbccccccccde'));

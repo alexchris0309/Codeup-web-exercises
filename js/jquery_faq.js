@@ -22,3 +22,52 @@ $('dt').click(function(event) {
     $(this).toggleClass('highlighted');
 });
 
+
+
+
+$('#button').click(function(event){
+    $("ul").each(function(i) {
+        $(this).children().last().css("background-color", "red");
+    });
+
+});
+
+
+
+
+$('h3').click(function(event){
+
+        $(this).next().slideToggle().css("font-weight", "bold");
+    });
+
+
+$('li').click(function(event){
+
+    $(this).parent().children().first().css("color", "blue");
+});
+
+//
+$('span').click(function(){
+    $(this).parent().hide();
+
+});
+
+$('ul').hide();
+
+// $('#hidden').hide();
+
+// vanilla js method
+// setTimeout(function(){
+//     $('#hidden').fadeIn(500);
+// }, 8000);
+
+// jquery method
+
+$('#hidden').hide().delay(8000).fadeIn(500);
+
+
+$('img').click(function(event) {
+$(this).parent().insertAfter($('#hello'));
+
+});
+
