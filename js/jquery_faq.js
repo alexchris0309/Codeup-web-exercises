@@ -19,7 +19,7 @@ $('dd').addClass( 'invisible' );
 
 $('dt').click(function(event) {
     event.preventDefault();
-    $(this).toggleClass('highlighted');
+    $(this).toggleClass('invisible');
 });
 
 
@@ -66,8 +66,13 @@ $('ul').hide();
 $('#hidden').hide().delay(8000).fadeIn(500);
 
 
-$('img').click(function(event) {
-$(this).parent().insertAfter($('#hello'));
+$('#1').click(function(event) {
+$(this).replaceWith($("#2"));
 
 });
-
+//
+// $( "div.third" ).replaceWith( $( ".first" ) );
+// $('img').click(function(event) {
+//     $(this).parent().insertBefore($('#group'));
+//
+// });
