@@ -1,0 +1,37 @@
+.h-scroll {
+    height: 90vh; /* %-height of the viewport */
+    overflow-y: scroll;
+}
+
+.peach{
+    color:white;
+    opacity:.6;
+    text-align:center;
+}
+
+body{
+    background-image:url("../pictures/clouds.jpg");
+    background-size:100%;
+    background-repeat:no-repeat;
+    background-position:center;
+}
+
+#post{
+    background-color:#7D9B97;
+    color:white;
+    opacity:.6;
+}
+
+.thought{
+    color:white;
+}
+
+#blogtext{
+    height:300px;
+}
+
+.subbutton{
+    background-color:#7D9B97;
+    color:white;
+    border:none;
+}

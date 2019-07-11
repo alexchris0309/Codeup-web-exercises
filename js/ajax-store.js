@@ -1,26 +1,26 @@
-// var jqHxr= $.ajax("data/inventory.json");
+$(document).ready(function() {
+    "use strict";
 
 
-
-
-function updatePage() {
-    $.ajax("data/inventory.json").done(function (data) {
-        $('#insertProducts').html('');
-        $(data).each(function (i, e) {
-            var tblRow = "<tr>" + "<td>" + e.title + "</td>" +
-                "<td>" + e.quantity + "</td>" + "<td>" + e.price + "</td>" + "<td>" + e.categories + "</td>" + "</tr>";
-            $(tblRow).appendTo("#insertProducts");
+    function updatePage() {
+        $.ajax("data/inventory.json").done(function (data) {
+            $('#insertProducts').html('');
+            $(data).each(function (i, e) {
+                var tblRow = "<tr>" + "<td>" + e.title + "</td>" +
+                    "<td>" + e.quantity + "</td>" + "<td>" + e.price + "</td>" + "<td>" + e.categories + "</td>" + "</tr>";
+                $(tblRow).appendTo("#insertProducts");
+            });
         });
-    });
 
-}
-updatePage()
+    }
 
-
-$("#refresh").click(updatePage);
+    updatePage();
 
 
+    $("#refresh").click(updatePage);
 
+
+});
 
 
 //
