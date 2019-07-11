@@ -32,7 +32,7 @@
   "price": 10
 },
   {
-    "title": "shovel",
+    "title": "Shovel",
     "quantity": 12,
     "categories": [
       "tool",
@@ -41,7 +41,7 @@
     "price": 25
   },
   {
-    "title": "hedge Trimmer",
+    "title": "Hedge Trimmer",
     "quantity": 10,
     "categories": [
       "tool",
