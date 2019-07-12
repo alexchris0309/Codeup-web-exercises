@@ -11,7 +11,7 @@
 
 body{
     background-image:url("../pictures/clouds.jpg");
-    background-size:100%;
+    background-size:cover;
     background-repeat:no-repeat;
     background-position:center;
 }
@@ -20,6 +20,8 @@ body{
     background-color:#7D9B97;
     color:white;
     opacity:.6;
+/*background:rgba(255,255,255,0.5);*/
+
 }
 
 .thought{
