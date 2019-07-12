@@ -1,39 +1,13 @@
 
 
 
-$.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+darkSkyKey+"/29.4241,-98.4936").done(function(data) {
-    var array= data.daily.data;
-    $(array).each(function (i) {
-        if(i <=2) {
-            var temp = "<div class=' daily col-4'>"+
-                "<h5>" + new Date(array[i].time  *1000)+ "</h5>" +
-                "<div>" + array[i].temperatureHigh+"˚"
-                + "/" + array[i].temperatureLow +"˚"+ "</div>" +
 
-                '<div id="climacons">' + '<img class="weatherIcons"' + ' ' + 'src="' +  'climacons/SVG/' + array[i].icon + '.svg' + '"' + 'alt="' + array[i].icon + '"' +'>' +
-                '</div>'+
-
-                "<div >"+"Clouds:" + array[i].summary + "</div>"+
-                "<div>"+"Humidity:" + array[i].humidity + "</div>"+
-                "<div>"+"Wind:" + array[i].windSpeed + "</div>"+
-                "<div>"+"Pressure:" + array[i].pressure + "</div>"+
-                "</div>";
-            $(temp).appendTo("#weather");
-        }
-    });
-});
+function getLocation(location) {
 
 
-
-
-var lat=$( "#lat" ).val();
-
-var long=$("#long").val();
-
-
-$("#search").click(function(){
-
-    $.get("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyKey + "/" + lat + "," + long + '"').done(function (data) {
+    $.get(location).done(function (data) {
+        $('#weather').html('');
+console.log(data);
         var array = data.daily.data;
         $(array).each(function (i) {
             if (i <= 2) {
@@ -55,37 +29,39 @@ $("#search").click(function(){
         });
     });
 
+}
+var sanAntonio="https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+darkSkyKey+"/29.4241,-98.4936";
+
+getLocation(sanAntonio);
+
+
+
+
+// vanilla js
+
+// document.getElementById("search").addEventListener("click",function(){
+//     var usernameInput = document.getElementById("lat").value;
+//
+//
+//     // log the value of the "username" input
+//     console.log(usernameInput);
+// });
+
+
+
+// function for entering lat and long in input. Changes weather information.
+
+
+$("#search").click(function(){
+    var searchLL= ("/"+$("#long").val()+","+$('#lat').val());
+    var newLocation="https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+darkSkyKey+searchLL;
+    getLocation(newLocation);
 
 });
 
 
-//
-// var goThere = document.getElementById('uInput');
-// goThere.addEventListener('click' ,function (event) {
-//     geocode(userAdd.value,mapboxtoken).then(function (result) {
-//         changeLocation.innerText = userAdd.value;
-//         $('#navLocation').text(userAdd.value);
-//         map.setCenter(result);
-//         map.setZoom(10);
-//         var newLocation = (result[1] + ',' + result[0]);
-//         $.get(darkSkyUrl + darkSkyKey + "/" + newLocation).done(function(data){
-//             $('#weatherCards').html(dailyForecast(data.daily.data));
-//         }).fail(function(){
-//             console.log("ERROR!");
-//         });
-//     });
-// }, false);
-
-
-
-
-
-
-
-
-
-
-
+// lat:40.730610
+// long:-73.935242
 
 
 
@@ -103,9 +79,13 @@ var map = new mapboxgl.Map({
 });
 
 
-var marker = new mapboxgl.Marker()
+var marker = new mapboxgl.Marker({
+    draggable: true
+})
     .setLngLat([-98.4951, 29.4246])
     .addTo(map);
+
+
 
 
 
@@ -123,7 +103,27 @@ function reverseGeocode(coordinates,token ) {
 }
 
 
-reverseGeocode({lng: -98.4861, lat: 29.4260}, mapboxToken).then(function(results) {
-    // logs the address for The Alamo
-    console.log(results);
-});
+
+
+
+
+function onDragEnd() {
+    var lngLat = marker.getLngLat();
+    coordinates.style.display = 'block';
+    coordinates.innerHTML = 'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+
+dragSearch=("/"+lngLat.lng +","+lngLat.lat)
+    var newLocation="https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+darkSkyKey+searchLL;
+    getLocation(newLocation);
+
+}
+
+
+marker.on('dragend', onDragEnd);
+//
+// $("#search").click(function(){
+//     var searchLL= ("/"+$("#long").val()+","+$('#lat').val());
+//     var newLocation="https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+darkSkyKey+searchLL;
+//     getLocation(newLocation);
+//
+// });
