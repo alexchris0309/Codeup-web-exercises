@@ -112,8 +112,9 @@ function onDragEnd() {
     coordinates.style.display = 'block';
     coordinates.innerHTML = 'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
 
-dragSearch=("/"+lngLat.lng +","+lngLat.lat)
-    var newLocation="https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+darkSkyKey+searchLL;
+var dragSearch=("/"+lngLat.lat +","+lngLat.lng);
+console.log(dragSearch)
+    var newLocation="https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+darkSkyKey+dragSearch;
     getLocation(newLocation);
 
 }
