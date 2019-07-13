@@ -4,7 +4,7 @@
 var bg = document.getElementsByTagName('body')[0];
 
 var backgroundColor = function (event) {
-    if(event.which === 71) {
+    if(event.keyCode === 71) {
 
         bg.style['background-color'] = 'purple';
     }
@@ -27,7 +27,22 @@ var count=function(key){
 console.log("enter key has been pressed "+ bucket.length +' times.');
 }
 
-window.addEventListener('keyup',count);
+document.addEventListener('keyup',count);
 
 
 //     When someone types 1, 2, 3 in a row, show an alert that says "You get a 50% discount!".
+
+var alertCode = '49,50,51';
+var code=[];
+
+
+
+$(document).keyup(function(element){
+    code.push(element.keyCode);
+    if (code.toString().indexOf(alertCode)>=0) {
+        alert("you get a 50% discount");
+
+    }
+});
+
+console.log(code)

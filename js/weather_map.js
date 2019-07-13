@@ -24,7 +24,7 @@ console.log(data);
                     "<div>" + "Wind:" + array[i].windSpeed + "</div>" +
                     "<div>" + "Pressure:" + array[i].pressure + "</div>" +
                     "</div>";
-                $(temp).appendTo("#weather");
+                $(temp).appendTo('#weather');
             }
         });
     });
@@ -77,6 +77,10 @@ var map = new mapboxgl.Map({
     zoom: 11,
     center: [-98.4951, 29.4246]
 });
+map.addControl(new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl
+}));
 
 
 var marker = new mapboxgl.Marker({
@@ -89,6 +93,34 @@ var marker = new mapboxgl.Marker({
 
 
 
+
+$('#searchbutton').click(function(event){
+    var addressSearch=$("#address").val();
+
+    geocode(addressSearch,mapboxToken).then(function(result){
+        console.log(+""+result[0]+ result[1])
+        var newLocation="https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+darkSkyKey+"/"+result[1]+","+result[0];
+        map.setCenter(result);
+        map.setZoom(16);
+        getLocation(newLocation);
+
+
+    });
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+// reverse Geocode
 function reverseGeocode(coordinates,token ) {
     var baseUrl = 'https://api.mapbox.com';
     var endPoint = '/geocoding/v5/mapbox.places/';
@@ -107,13 +139,12 @@ function reverseGeocode(coordinates,token ) {
 
 
 
+
 function onDragEnd() {
     var lngLat = marker.getLngLat();
-    coordinates.style.display = 'block';
-    coordinates.innerHTML = 'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
 
-var dragSearch=("/"+lngLat.lat +","+lngLat.lng);
-console.log(dragSearch)
+    var dragSearch=("/"+lngLat.lat +","+lngLat.lng);
+// console.log(dragSearch)
     var newLocation="https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+darkSkyKey+dragSearch;
     getLocation(newLocation);
 
