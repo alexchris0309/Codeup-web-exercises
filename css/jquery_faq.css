@@ -7,3 +7,8 @@
 /*.planetfacts{*/
 /*    visibility:hidden;*/
 /*}*/
+
+.highlighted{
+    background-color:yellow;
+
+}
