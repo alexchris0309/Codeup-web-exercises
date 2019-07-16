@@ -5,6 +5,10 @@
     <title>Weather Map</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css' type='text/css' />
+
     <link rel="stylesheet" href="css/weather_map.css">
 </head>
 <body>
@@ -13,12 +17,14 @@
 
 <div class="container">
     <h1>Weather Application</h1>
-    <h2>San Antonio</h2>
+    <h2>Current Weather</h2>
 
-    <div id="weather" class="row"></div>
+<!--    <div id="weather" class="row">-->
+
+<!--    </div>-->
 
 
-<br>
+
 <!--    <div class="input-group">-->
 <!--        <div class="input-group-prepend">-->
 <!--            <span class="input-group-text">Latitude and Longitude</span>-->
@@ -28,22 +34,29 @@
 <!--    </div>-->
 <!--    <button id="search"type="button">Search</button>-->
 
-    <div class="form-group">
-        <label for="exampleFormControlInput1">Email address</label>
-        <input type="email" id="address" class="form-control" id="exampleFormControlInput1" placeholder="address">
-    </div>
-        <button id="searchbutton"type="button">Search</button>
+<div class="form-group">
+    <label for="exampleFormControlInput1"></label>
+    <input type="email" id="address" class="form-control" id="exampleFormControlInput1" placeholder="address">
+    <button type="button" id="searchbutton" class="btn btn-secondary btn-lg btn-block">Search</button>
+</div>
+        <div class="today row">
+            <div id='map' class=" col-8">
+            </div>
+            <div class="todayweather col-4">
+            </div>
 
+        </div>
 
-    <div id='map'></div>
+<br>
+    <h2>Three Day Forecast</h2>
 
-    <pre id='coordinates' class='coordinates'></pre>
+<div id="weather" class="row"></div>
 
 
 </div>
 
 
-
+</body>
 
 
 

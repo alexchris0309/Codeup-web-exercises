@@ -89,6 +89,8 @@ $('#hidden').hide().delay(8000).fadeIn(500);
         $("#1").attr("src",imgCenter);
         $("#2").attr('src',imgLeft);
     });
+
+
     $("#swap3").click(function () {
         var imgCenter = $("#2").attr("src");
         var imgRight = $("#3").attr("src");
@@ -96,6 +98,7 @@ $('#hidden').hide().delay(8000).fadeIn(500);
         $("#3").attr("src", imgCenter);
         $("#2").attr("src", imgRight);
     });
+
 
 $("#swap2").click(function(){
 
@@ -114,4 +117,4 @@ $("#swap2").click(function(){
             $("#3").attr("src", imgCenter)
         }
     }
-})
+});
