@@ -113,14 +113,30 @@ $('#searchbutton').click(function(event){
     var addressSearch=$("#address").val();
 
     geocode(addressSearch,mapboxToken).then(function(result){
-        console.log(+""+result[0]+ result[1]);
+
+        // console.log(+""+result[0]+ result[1]);
         console.log(result);
         var newLocation="https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+darkSkyKey+"/"+result[1]+","+result[0];
         map.setCenter(result);
         map.setZoom(10);
         getLocation(newLocation);
 
+        var marker = new mapboxgl.Marker({
+            draggable: true
+        })
+            .setLngLat(result)
+            .addTo(map);
+        function onDragEnd() {
+            var lngLat = marker.getLngLat();
 
+            var dragSearch=("/"+lngLat.lat +","+lngLat.lng);
+// console.log(dragSearch)
+            var newLocation="https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+darkSkyKey+dragSearch;
+            getLocation(newLocation);
+
+        }
+
+        marker.on('dragend', onDragEnd);
     });
 
 
