@@ -101,13 +101,16 @@ var map = new mapboxgl.Map({
 // }));
 
 
-var marker = new mapboxgl.Marker({
+var marker = mapboxgl.Marker({
     draggable: true
 })
     .setLngLat([-98.4951, 29.4246])
     .addTo(map);
 
 
+
+
+// search bar
 
 $('#searchbutton').click(function(event){
     var addressSearch=$("#address").val();
@@ -121,10 +124,7 @@ $('#searchbutton').click(function(event){
         map.setZoom(10);
         getLocation(newLocation);
 
-        var marker = new mapboxgl.Marker({
-            draggable: true
-        })
-            .setLngLat(result)
+            marker.setLngLat(result)
             .addTo(map);
         function onDragEnd() {
             var lngLat = marker.getLngLat();
