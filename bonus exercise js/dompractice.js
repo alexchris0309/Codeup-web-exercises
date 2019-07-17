@@ -29,9 +29,9 @@
 //
 // document.addEventListener('keyup',count);
 //
-//
-// //     When someone types 1, 2, 3 in a row, show an alert that says "You get a 50% discount!".
-//
+// //
+// // //     When someone types 1, 2, 3 in a row, show an alert that says "You get a 50% discount!".
+// //
 // var alertCode = '49,50,51';
 // var code=[];
 //
